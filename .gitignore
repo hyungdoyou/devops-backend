@@ -15,7 +15,6 @@ target/
 
 ### IntelliJ IDEA ###
 application.yml
-*.yml
 .idea
 *.iws
 *.iml

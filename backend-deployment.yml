@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+  minReadySeconds: 10
+  selector:
+    matchLabels:
+      type: backend
+  template:
+    metadata:
+      labels:
+        type: backend
+    spec:
+      containers:
+      - name: backend-container
+        image: hyungdoyou/be:2.VERSION
+        envFrom:
+          - configMapRef:
+              name: backendconfig
+      terminationGracePeriodSeconds: 5

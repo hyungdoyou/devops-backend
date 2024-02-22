@@ -32,7 +32,7 @@ public class UserController {
     private final EmailVerifyService emailVerifyService;
 
 
-    @ApiOperation(value = "회원 가입", response = BaseRes.class, notes = "회원이 회원 정보를 입력하여 회원 가입을 진행한다.")
+    @ApiOperation(value = "회원 가입", response = BaseRes.class, notes = "회원이 회원 정보를 입력하여 회원 가입을 진행한다..")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "OK ( 요청 성공 )", content = { @Content(mediaType = "application/json", schema = @Schema(implementation = BaseRes.class)) }) })
     @RequestMapping(method = RequestMethod.POST, value = "/signup")

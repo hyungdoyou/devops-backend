@@ -20,5 +20,5 @@ spec:
         image: hyungdoyou/be:2.VERSION
         envFrom:
           - configMapRef:
-              name: backendconfig
+              name: backend-config
       terminationGracePeriodSeconds: 5

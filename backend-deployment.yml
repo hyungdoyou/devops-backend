@@ -23,11 +23,11 @@ spec:
         image: hyungdoyou/be:2.VERSION
         resources:
           requests:
-            memory: "4Gi"
-            cpu: "2000m"
+            memory: "512m"
+            cpu: "100m"
           limits:
-            memory: "8Gi"
-            cpu: "4000m"
+            memory: "3Gi"
+            cpu: "2000m"
         readinessProbe:
           httpGet:
             path: /product/list/1/3

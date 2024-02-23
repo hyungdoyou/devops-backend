@@ -6,6 +6,9 @@ spec:
   replicas: 2
   strategy:
     type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0%
+      maxSurge: 100%
   minReadySeconds: 10
   selector:
     matchLabels:
@@ -18,6 +21,13 @@ spec:
       containers:
       - name: backend-container
         image: hyungdoyou/be:2.VERSION
+        readinessProbe:
+          httpGet:
+            path: /product/list/1/3
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 2
+          successThreshold: 3
         envFrom:
           - configMapRef:
               name: backend-config

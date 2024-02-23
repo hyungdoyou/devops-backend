@@ -6,9 +6,6 @@ spec:
   replicas: 2
   strategy:
     type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 0%
-      maxSurge: 100%
   minReadySeconds: 10
   selector:
     matchLabels:

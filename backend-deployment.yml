@@ -20,7 +20,7 @@ spec:
         image: hyungdoyou/be:2.VERSION
         resources:
           requests:
-            memory: "512m"
+            memory: "1024m"
             cpu: "100m"
           limits:
             memory: "3Gi"

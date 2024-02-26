@@ -159,7 +159,7 @@ public class ProductService {
         BaseRes baseRes = BaseRes.builder()
                 .code(200)
                 .isSuccess(true)
-                .message("요청 성공")
+                .message("요청 성공입니다.")
                 .result(getListProductResList)
                 .build();
 

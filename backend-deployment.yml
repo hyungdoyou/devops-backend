@@ -21,17 +21,23 @@ spec:
         resources:
           requests:
             memory: "1024m"
-            cpu: "100m"
+            cpu: "600m"
           limits:
             memory: "3Gi"
             cpu: "2000m"
         readinessProbe:
           httpGet:
-            path: /product/list/1/4
+            path: /product/list/1/1
             port: 8080
-          initialDelaySeconds: 5
-          periodSeconds: 2
+          initialDelaySeconds: 20
+          periodSeconds: 10
           successThreshold: 3
+        livenessProbe:
+          httpGet:
+            path: /product/list/1/1
+            port: 80
+          initialDelaySeconds: 20
+          periodSeconds: 10
         envFrom:
           - configMapRef:
               name: backend-config

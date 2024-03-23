@@ -130,7 +130,7 @@ class UserControllerTest {
                 .result(mockResponse)
                 .build();
 
-        // given/
+        // given
 
         ObjectMapper mapper = new ObjectMapper();
 
